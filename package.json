@@ -5,7 +5,12 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node .",
+    "dev": "nodemon .",
+    "debug": "nodemon --inspect .",
+    "format": "prettier --write .",
+    "lint": "eslint . --fix",
+    "test": ""
   },
   "repository": {
     "type": "git",
@@ -25,6 +30,9 @@
     "mongoose": "^7.1.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8"
   }
 }
