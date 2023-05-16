@@ -1,9 +1,6 @@
 import ShortLink from '../model/shortlink.js';
-import process from 'node:process';
 import { nanoid } from 'nanoid';
-import dotenv from 'dotenv';
-
-dotenv.config();
+import { host, port } from '../util/config.js';
 
 export async function getLink(req, res) {
 	const links = await ShortLink.find();
@@ -41,7 +38,7 @@ export async function postLink(req, res) {
 
 	res.json({
 		message: 'short link created',
-		shortURL: `${process.env.host}/${shortLink.slug}`,
+		shortURL: `http://${host}:${port}/${shortLink.slug}`,
 	});
 }
 

@@ -1,13 +1,10 @@
 import app from './app.js';
-import dotenv from 'dotenv';
-import process from 'node:process';
 import mongoose from 'mongoose';
-
-dotenv.config();
+import { MongodbURI, host, port } from './util/config.js';
 
 (async () => {
-	await mongoose.connect(process.env.MongodbURI);
-	app.listen(process.env.port || 5000, () => {
-		console.log('server is runnig');
+	await mongoose.connect(MongodbURI);
+	app.listen(port || 5000, () => {
+		console.log(`server is runnig on http://${host}:${port}`);
 	});
 })();
