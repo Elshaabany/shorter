@@ -1,38 +1,39 @@
 {
-  "name": "shorter",
-  "version": "1.0.0",
-  "description": "URL shortener",
-  "main": "server.js",
-  "type": "module",
-  "scripts": {
-    "start": "node .",
-    "dev": "nodemon .",
-    "debug": "nodemon --inspect .",
-    "format": "prettier --write .",
-    "lint": "eslint . --fix",
-    "test": ""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Elshaabany/shorter.git"
-  },
-  "author": "Eslam Elshaabany",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Elshaabany/shorter/issues"
-  },
-  "homepage": "https://github.com/Elshaabany/shorter#readme",
-  "dependencies": {
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "express-async-errors": "^3.1.1",
-    "express-validator": "^7.0.1",
-    "mongoose": "^7.1.1"
-  },
-  "devDependencies": {
-    "eslint": "^8.40.0",
-    "eslint-config-prettier": "^8.8.0",
-    "nodemon": "^2.0.22",
-    "prettier": "^2.8.8"
-  }
+	"name": "shorter",
+	"version": "1.0.0",
+	"description": "URL shortener",
+	"main": "server.js",
+	"type": "module",
+	"scripts": {
+		"start": "node .",
+		"dev": "nodemon .",
+		"debug": "nodemon --inspect .",
+		"format": "prettier --write .",
+		"lint": "eslint . --fix",
+		"test": ""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Elshaabany/shorter.git"
+	},
+	"author": "Eslam Elshaabany",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Elshaabany/shorter/issues"
+	},
+	"homepage": "https://github.com/Elshaabany/shorter#readme",
+	"dependencies": {
+		"dotenv": "^16.0.3",
+		"express": "^4.18.2",
+		"express-async-errors": "^3.1.1",
+		"express-validator": "^7.0.1",
+		"mongoose": "^7.1.1",
+		"nanoid": "^4.0.2"
+	},
+	"devDependencies": {
+		"eslint": "^8.40.0",
+		"eslint-config-prettier": "^8.8.0",
+		"nodemon": "^2.0.22",
+		"prettier": "^2.8.8"
+	}
 }
