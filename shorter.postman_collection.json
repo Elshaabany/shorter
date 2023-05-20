@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "e080395b-fcd2-4c62-97e7-2472be4de593",
+		"name": "shorter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14566239"
+	},
+	"item": [
+		{
+			"name": "get all links",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/shortlink/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"shortlink",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add new link",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"slug\": \"s5G1f3\",\n    \"ios\": {\n        \"primary\": \"http://primary.ios.com\",\n        \"fallback\": \"http://fallback.ios.com\"\n    },\n    \"android\": {\n        \"primary\": \"http://primary.android.com\",\n        \"fallback\": \"http://fallback.android.com\"\n    },\n    \"web\": \"http://web.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/shortlink/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"shortlink",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit link",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"slug\": \"s5G1f3\",\n    \"hello\":\"world\",\n    \"android\": {\n        \"primary\": \"http://new.link.com\",\n        \"fallback\": \"http://new.link.com\"\n    },\n    \"web\": \"http://next.web.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/shortlink/:slug",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"shortlink",
+						":slug"
+					],
+					"variable": [
+						{
+							"key": "slug",
+							"value": "s5G1f3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get original URL",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "Android",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "User-Agent",
+						"value": "Iphone",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "web",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{host}}/:slug",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						":slug"
+					],
+					"variable": [
+						{
+							"key": "slug",
+							"value": "s5G1f3"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "host",
+			"type": "string"
+		}
+	]
+}
